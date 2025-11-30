@@ -1,0 +1,171 @@
+2025-11-30T08:49:07.0884949Z Current runner version: '2.329.0'
+2025-11-30T08:49:07.0919656Z ##[group]Runner Image Provisioner
+2025-11-30T08:49:07.0920958Z Hosted Compute Agent
+2025-11-30T08:49:07.0921787Z Version: 20251016.436
+2025-11-30T08:49:07.0923260Z Commit: 8ab8ac8bfd662a3739dab9fe09456aba92132568
+2025-11-30T08:49:07.0924475Z Build Date: 2025-10-15T20:44:12Z
+2025-11-30T08:49:07.0925454Z ##[endgroup]
+2025-11-30T08:49:07.0926388Z ##[group]Operating System
+2025-11-30T08:49:07.0927414Z Ubuntu
+2025-11-30T08:49:07.0928196Z 24.04.3
+2025-11-30T08:49:07.0929130Z LTS
+2025-11-30T08:49:07.0930029Z ##[endgroup]
+2025-11-30T08:49:07.0930858Z ##[group]Runner Image
+2025-11-30T08:49:07.0931898Z Image: ubuntu-24.04
+2025-11-30T08:49:07.0932940Z Version: 20251112.124.1
+2025-11-30T08:49:07.0934723Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20251112.124/images/ubuntu/Ubuntu2404-Readme.md
+2025-11-30T08:49:07.0937380Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20251112.124
+2025-11-30T08:49:07.0939807Z ##[endgroup]
+2025-11-30T08:49:07.0941783Z ##[group]GITHUB_TOKEN Permissions
+2025-11-30T08:49:07.0945054Z Contents: read
+2025-11-30T08:49:07.0946162Z Metadata: read
+2025-11-30T08:49:07.0947006Z Packages: read
+2025-11-30T08:49:07.0948009Z ##[endgroup]
+2025-11-30T08:49:07.0951656Z Secret source: Actions
+2025-11-30T08:49:07.0953348Z Prepare workflow directory
+2025-11-30T08:49:07.1436412Z Prepare all required actions
+2025-11-30T08:49:07.1494770Z Getting action download info
+2025-11-30T08:49:07.3881918Z Download action repository 'actions/checkout@v4' (SHA:34e114876b0b11c390a56381ad16ebd13914f8d5)
+2025-11-30T08:49:07.8437909Z Download action repository 'actions/setup-java@v4' (SHA:c5195efecf7bdfc987ee8bae7a71cb8b11521c00)
+2025-11-30T08:49:08.1470489Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+2025-11-30T08:49:08.3542118Z Complete job name: build
+2025-11-30T08:49:08.4271238Z ##[group]Run actions/checkout@v4
+2025-11-30T08:49:08.4272164Z with:
+2025-11-30T08:49:08.4272953Z   repository: danhtrinhdevelopermay/AiAssistant
+2025-11-30T08:49:08.4273809Z   token: ***
+2025-11-30T08:49:08.4274251Z   ssh-strict: true
+2025-11-30T08:49:08.4274701Z   ssh-user: git
+2025-11-30T08:49:08.4275155Z   persist-credentials: true
+2025-11-30T08:49:08.4275651Z   clean: true
+2025-11-30T08:49:08.4276098Z   sparse-checkout-cone-mode: true
+2025-11-30T08:49:08.4276644Z   fetch-depth: 1
+2025-11-30T08:49:08.4277074Z   fetch-tags: false
+2025-11-30T08:49:08.4277528Z   show-progress: true
+2025-11-30T08:49:08.4278014Z   lfs: false
+2025-11-30T08:49:08.4278449Z   submodules: false
+2025-11-30T08:49:08.4278910Z   set-safe-directory: true
+2025-11-30T08:49:08.4279694Z ##[endgroup]
+2025-11-30T08:49:08.5367299Z Syncing repository: danhtrinhdevelopermay/AiAssistant
+2025-11-30T08:49:08.5369571Z ##[group]Getting Git version info
+2025-11-30T08:49:08.5370493Z Working directory is '/home/runner/work/AiAssistant/AiAssistant'
+2025-11-30T08:49:08.5371708Z [command]/usr/bin/git version
+2025-11-30T08:49:08.5434744Z git version 2.51.2
+2025-11-30T08:49:08.5461057Z ##[endgroup]
+2025-11-30T08:49:08.5482577Z Temporarily overriding HOME='/home/runner/work/_temp/0ea46a65-85b9-4131-8eb6-48c64a48dbbb' before making global git config changes
+2025-11-30T08:49:08.5484323Z Adding repository directory to the temporary git global config as a safe directory
+2025-11-30T08:49:08.5487810Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/AiAssistant/AiAssistant
+2025-11-30T08:49:08.5526759Z Deleting the contents of '/home/runner/work/AiAssistant/AiAssistant'
+2025-11-30T08:49:08.5530642Z ##[group]Initializing the repository
+2025-11-30T08:49:08.5534745Z [command]/usr/bin/git init /home/runner/work/AiAssistant/AiAssistant
+2025-11-30T08:49:08.5643615Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-11-30T08:49:08.5644830Z hint: is subject to change. To configure the initial branch name to use in all
+2025-11-30T08:49:08.5645797Z hint: of your new repositories, which will suppress this warning, call:
+2025-11-30T08:49:08.5647381Z hint:
+2025-11-30T08:49:08.5648019Z hint: 	git config --global init.defaultBranch <name>
+2025-11-30T08:49:08.5648659Z hint:
+2025-11-30T08:49:08.5649249Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-11-30T08:49:08.5650202Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-11-30T08:49:08.5650948Z hint:
+2025-11-30T08:49:08.5651378Z hint: 	git branch -m <name>
+2025-11-30T08:49:08.5651929Z hint:
+2025-11-30T08:49:08.5652977Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2025-11-30T08:49:08.5654131Z Initialized empty Git repository in /home/runner/work/AiAssistant/AiAssistant/.git/
+2025-11-30T08:49:08.5658872Z [command]/usr/bin/git remote add origin https://github.com/danhtrinhdevelopermay/AiAssistant
+2025-11-30T08:49:08.5693590Z ##[endgroup]
+2025-11-30T08:49:08.5694437Z ##[group]Disabling automatic garbage collection
+2025-11-30T08:49:08.5697884Z [command]/usr/bin/git config --local gc.auto 0
+2025-11-30T08:49:08.5728567Z ##[endgroup]
+2025-11-30T08:49:08.5730002Z ##[group]Setting up auth
+2025-11-30T08:49:08.5736619Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-11-30T08:49:08.5768461Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-11-30T08:49:08.6135288Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-11-30T08:49:08.6165658Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-11-30T08:49:08.6391495Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2025-11-30T08:49:08.6431683Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2025-11-30T08:49:08.6657423Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-11-30T08:49:08.6694315Z ##[endgroup]
+2025-11-30T08:49:08.6695617Z ##[group]Fetching the repository
+2025-11-30T08:49:08.6702125Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +f57d36cf49fd44bb2b17b8c8a080d5c18c09f038:refs/remotes/origin/main
+2025-11-30T08:49:08.8631249Z From https://github.com/danhtrinhdevelopermay/AiAssistant
+2025-11-30T08:49:08.8632506Z  * [new ref]         f57d36cf49fd44bb2b17b8c8a080d5c18c09f038 -> origin/main
+2025-11-30T08:49:08.8668343Z ##[endgroup]
+2025-11-30T08:49:08.8671172Z ##[group]Determining the checkout info
+2025-11-30T08:49:08.8672606Z ##[endgroup]
+2025-11-30T08:49:08.8677713Z [command]/usr/bin/git sparse-checkout disable
+2025-11-30T08:49:08.8723915Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-11-30T08:49:08.8754014Z ##[group]Checking out the ref
+2025-11-30T08:49:08.8759390Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+2025-11-30T08:49:08.8855355Z Switched to a new branch 'main'
+2025-11-30T08:49:08.8858386Z branch 'main' set up to track 'origin/main'.
+2025-11-30T08:49:08.8867172Z ##[endgroup]
+2025-11-30T08:49:08.8909037Z [command]/usr/bin/git log -1 --format=%H
+2025-11-30T08:49:08.8934218Z f57d36cf49fd44bb2b17b8c8a080d5c18c09f038
+2025-11-30T08:49:08.9254128Z ##[group]Run actions/setup-java@v4
+2025-11-30T08:49:08.9255127Z with:
+2025-11-30T08:49:08.9255763Z   java-version: 17
+2025-11-30T08:49:08.9256499Z   distribution: temurin
+2025-11-30T08:49:08.9257274Z   cache: gradle
+2025-11-30T08:49:08.9258286Z   java-package: jdk
+2025-11-30T08:49:08.9259100Z   check-latest: false
+2025-11-30T08:49:08.9259953Z   server-id: github
+2025-11-30T08:49:08.9260815Z   server-username: GITHUB_ACTOR
+2025-11-30T08:49:08.9261869Z   server-password: GITHUB_TOKEN
+2025-11-30T08:49:08.9263381Z   overwrite-settings: true
+2025-11-30T08:49:08.9264400Z   job-status: success
+2025-11-30T08:49:08.9265546Z   token: ***
+2025-11-30T08:49:08.9266275Z ##[endgroup]
+2025-11-30T08:49:09.1429335Z ##[group]Installed distributions
+2025-11-30T08:49:09.1641054Z Resolved Java 17.0.17+10 from tool-cache
+2025-11-30T08:49:09.1643138Z Setting Java 17.0.17+10 as the default
+2025-11-30T08:49:09.1661227Z Creating toolchains.xml for JDK version 17 from temurin
+2025-11-30T08:49:09.1752578Z Writing to /home/runner/.m2/toolchains.xml
+2025-11-30T08:49:09.1754202Z 
+2025-11-30T08:49:09.1754839Z Java configuration:
+2025-11-30T08:49:09.1756237Z   Distribution: temurin
+2025-11-30T08:49:09.1757924Z   Version: 17.0.17+10
+2025-11-30T08:49:09.1760071Z   Path: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.17-10/x64
+2025-11-30T08:49:09.1761939Z 
+2025-11-30T08:49:09.1763889Z ##[endgroup]
+2025-11-30T08:49:09.1784349Z Creating settings.xml with server-id: github
+2025-11-30T08:49:09.1786659Z Writing to /home/runner/.m2/settings.xml
+2025-11-30T08:49:09.3246806Z gradle cache is not found
+2025-11-30T08:49:09.3415850Z ##[group]Run chmod +x gradlew
+2025-11-30T08:49:09.3416921Z [36;1mchmod +x gradlew[0m
+2025-11-30T08:49:09.3455982Z shell: /usr/bin/bash -e {0}
+2025-11-30T08:49:09.3456926Z env:
+2025-11-30T08:49:09.3458203Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.17-10/x64
+2025-11-30T08:49:09.3460117Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.17-10/x64
+2025-11-30T08:49:09.3461605Z ##[endgroup]
+2025-11-30T08:49:09.3715643Z ##[group]Run echo "GEMINI_API_KEY=" > local.properties
+2025-11-30T08:49:09.3717026Z [36;1mecho "GEMINI_API_KEY=" > local.properties[0m
+2025-11-30T08:49:09.3752628Z shell: /usr/bin/bash -e {0}
+2025-11-30T08:49:09.3753766Z env:
+2025-11-30T08:49:09.3754782Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.17-10/x64
+2025-11-30T08:49:09.3756567Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.17-10/x64
+2025-11-30T08:49:09.3757981Z ##[endgroup]
+2025-11-30T08:49:09.3871944Z ##[group]Run ./gradlew assembleDebug
+2025-11-30T08:49:09.3873152Z [36;1m./gradlew assembleDebug[0m
+2025-11-30T08:49:09.3903796Z shell: /usr/bin/bash -e {0}
+2025-11-30T08:49:09.3904612Z env:
+2025-11-30T08:49:09.3905626Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.17-10/x64
+2025-11-30T08:49:09.3907399Z   JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.17-10/x64
+2025-11-30T08:49:09.3908768Z ##[endgroup]
+2025-11-30T08:49:10.6506949Z Error: Could not find or load main class org.gradle.wrapper.GradleWrapperMain
+2025-11-30T08:49:10.6508582Z Caused by: java.lang.ClassNotFoundException: org.gradle.wrapper.GradleWrapperMain
+2025-11-30T08:49:10.6612285Z ##[error]Process completed with exit code 1.
+2025-11-30T08:49:10.6757506Z Post job cleanup.
+2025-11-30T08:49:10.8533377Z Post job cleanup.
+2025-11-30T08:49:10.9497821Z [command]/usr/bin/git version
+2025-11-30T08:49:10.9538875Z git version 2.51.2
+2025-11-30T08:49:10.9583551Z Temporarily overriding HOME='/home/runner/work/_temp/8b2e8eaa-deda-4539-927c-2645d77c9860' before making global git config changes
+2025-11-30T08:49:10.9585010Z Adding repository directory to the temporary git global config as a safe directory
+2025-11-30T08:49:10.9589832Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/AiAssistant/AiAssistant
+2025-11-30T08:49:10.9629361Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-11-30T08:49:10.9665058Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-11-30T08:49:10.9918147Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-11-30T08:49:10.9941238Z http.https://github.com/.extraheader
+2025-11-30T08:49:10.9958364Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-11-30T08:49:10.9993598Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-11-30T08:49:11.0235087Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2025-11-30T08:49:11.0268895Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2025-11-30T08:49:11.0611822Z Cleaning up orphan processes
