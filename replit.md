@@ -12,7 +12,6 @@ This is a **native Android application** that cannot be run directly in the Repl
 
 ## Project Structure
 ```
-XiaoAI/
 ├── app/                           # Main Android app module
 │   ├── src/main/
 │   │   ├── java/com/xiaoai/assistant/
@@ -29,7 +28,7 @@ XiaoAI/
 │   │   │   └── media/            # Image/video processing
 │   │   └── res/                  # Android resources
 │   └── build.gradle.kts          # App build configuration
-├── .github/workflows/            # GitHub Actions for APK builds
+├── gradle/                        # Gradle wrapper
 ├── build.gradle.kts              # Root build configuration
 └── settings.gradle.kts           # Gradle settings
 ```
