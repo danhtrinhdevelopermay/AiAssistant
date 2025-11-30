@@ -72,6 +72,9 @@ XiaoAI/
 - Gemini AI integration for text, image, and video analysis
 - Complete UI with onboarding, assistant, and settings screens
 - GitHub Actions workflow for automated APK builds
+- Fixed PreferencesManager to fallback to BuildConfig.GEMINI_API_KEY
+- Fixed VoiceInteractionSession lifecycle to maintain overlay
+- Improved MediaManager with full image/video processing
 
 ## Notes
 - This is a mobile app project - it cannot run as a web service
