@@ -1,0 +1,120 @@
+name: Build XiaoAI APK
+
+on:
+  push:
+    branches: [ main, master ]
+    tags:
+      - 'v*'
+  pull_request:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    
+    - name: Set up JDK 17
+      uses: actions/setup-java@v4
+      with:
+        java-version: '17'
+        distribution: 'temurin'
+        cache: gradle
+    
+    - name: Grant execute permission for gradlew
+      run: chmod +x gradlew
+    
+    - name: Create local.properties
+      run: |
+        echo "sdk.dir=$ANDROID_SDK_ROOT" > local.properties
+    
+    - name: Create keystore directory
+      run: mkdir -p app/keystore
+    
+    - name: Decode keystore
+      if: ${{ github.event_name != 'pull_request' }}
+      run: |
+        if [ -n "${{ secrets.KEYSTORE_BASE64 }}" ]; then
+          echo "${{ secrets.KEYSTORE_BASE64 }}" | base64 -d > app/keystore/release.keystore
+        else
+          keytool -genkey -v -keystore app/keystore/release.keystore -alias xiaoai -keyalg RSA -keysize 2048 -validity 10000 -storepass android -keypass android -dname "CN=XiaoAI, OU=Development, O=XiaoAI, L=Unknown, S=Unknown, C=VN"
+        fi
+    
+    - name: Create debug keystore for PR builds
+      if: ${{ github.event_name == 'pull_request' }}
+      run: |
+        keytool -genkey -v -keystore app/keystore/release.keystore -alias xiaoai -keyalg RSA -keysize 2048 -validity 10000 -storepass android -keypass android -dname "CN=XiaoAI, OU=Development, O=XiaoAI, L=Unknown, S=Unknown, C=VN"
+    
+    - name: Build Debug APK
+      run: ./gradlew assembleDebug --no-daemon
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+    
+    - name: Build Release APK
+      if: ${{ github.event_name != 'pull_request' }}
+      run: ./gradlew assembleRelease --no-daemon
+      env:
+        KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD || 'android' }}
+        KEY_ALIAS: ${{ secrets.KEY_ALIAS || 'xiaoai' }}
+        KEY_PASSWORD: ${{ secrets.KEY_PASSWORD || 'android' }}
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+    
+    - name: Upload Debug APK
+      uses: actions/upload-artifact@v4
+      with:
+        name: XiaoAI-debug
+        path: app/build/outputs/apk/debug/*.apk
+        retention-days: 30
+    
+    - name: Upload Release APK
+      if: ${{ github.event_name != 'pull_request' }}
+      uses: actions/upload-artifact@v4
+      with:
+        name: XiaoAI-release
+        path: app/build/outputs/apk/release/*.apk
+        retention-days: 90
+    
+    - name: Create Release
+      if: startsWith(github.ref, 'refs/tags/v')
+      uses: softprops/action-gh-release@v1
+      with:
+        files: |
+          app/build/outputs/apk/release/*.apk
+          app/build/outputs/apk/debug/*.apk
+        generate_release_notes: true
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  lint:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    
+    - name: Set up JDK 17
+      uses: actions/setup-java@v4
+      with:
+        java-version: '17'
+        distribution: 'temurin'
+        cache: gradle
+    
+    - name: Grant execute permission for gradlew
+      run: chmod +x gradlew
+    
+    - name: Create local.properties
+      run: echo "sdk.dir=$ANDROID_SDK_ROOT" > local.properties
+    
+    - name: Run Lint
+      run: ./gradlew lint --no-daemon
+    
+    - name: Upload Lint Report
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: lint-report
+        path: app/build/reports/lint-results*.html
+        retention-days: 7

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">XiaoAI</string>
+    <string name="settings_title">Cài đặt XiaoAI</string>
+    
+    <!-- Assistant -->
+    <string name="assistant_greeting">Xin chào! Tôi là XiaoAI, trợ lý ảo thông minh của bạn.</string>
+    <string name="assistant_listening">Đang lắng nghe...</string>
+    <string name="assistant_thinking">Đang suy nghĩ...</string>
+    <string name="assistant_error">Đã xảy ra lỗi. Vui lòng thử lại.</string>
+    <string name="assistant_hint">Nhập tin nhắn hoặc nhấn microphone</string>
+    
+    <!-- Permissions -->
+    <string name="permission_audio_title">Quyền ghi âm</string>
+    <string name="permission_audio_desc">XiaoAI cần quyền ghi âm để nghe giọng nói của bạn</string>
+    <string name="permission_camera_title">Quyền camera</string>
+    <string name="permission_camera_desc">XiaoAI cần quyền camera để chụp ảnh và quay video</string>
+    <string name="permission_storage_title">Quyền lưu trữ</string>
+    <string name="permission_storage_desc">XiaoAI cần quyền lưu trữ để truy cập ảnh và video</string>
+    
+    <!-- Onboarding -->
+    <string name="onboarding_title">Chào mừng đến với XiaoAI</string>
+    <string name="onboarding_desc">Trợ lý ảo thông minh hỗ trợ bạn mọi lúc mọi nơi</string>
+    <string name="onboarding_default_assistant">Đặt làm trợ lý mặc định</string>
+    <string name="onboarding_default_assistant_desc">Để sử dụng XiaoAI thay thế Google Assistant, bạn cần đặt XiaoAI làm trợ lý mặc định</string>
+    <string name="onboarding_open_settings">Mở cài đặt</string>
+    <string name="onboarding_skip">Bỏ qua</string>
+    <string name="onboarding_next">Tiếp tục</string>
+    <string name="onboarding_done">Hoàn tất</string>
+    
+    <!-- Settings -->
+    <string name="settings_api_key">Khóa API Gemini</string>
+    <string name="settings_api_key_desc">Nhập khóa API từ Google AI Studio</string>
+    <string name="settings_voice">Giọng nói</string>
+    <string name="settings_voice_enabled">Bật/tắt phản hồi bằng giọng nói</string>
+    <string name="settings_default_assistant">Trợ lý mặc định</string>
+    <string name="settings_default_assistant_desc">Đặt XiaoAI làm trợ lý mặc định của thiết bị</string>
+    <string name="settings_about">Về ứng dụng</string>
+    <string name="settings_version">Phiên bản</string>
+    
+    <!-- Actions -->
+    <string name="action_send">Gửi</string>
+    <string name="action_camera">Chụp ảnh</string>
+    <string name="action_gallery">Thư viện</string>
+    <string name="action_video">Quay video</string>
+    <string name="action_close">Đóng</string>
+    <string name="action_cancel">Hủy</string>
+    <string name="action_confirm">Xác nhận</string>
+    <string name="action_retry">Thử lại</string>
+    
+    <!-- Media -->
+    <string name="media_analyzing_image">Đang phân tích hình ảnh...</string>
+    <string name="media_analyzing_video">Đang phân tích video...</string>
+    <string name="media_select_image">Chọn hình ảnh</string>
+    <string name="media_select_video">Chọn video</string>
+    <string name="media_capture_image">Chụp ảnh mới</string>
+    <string name="media_capture_video">Quay video mới</string>
+</resources>
